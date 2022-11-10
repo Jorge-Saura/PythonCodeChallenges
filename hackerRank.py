@@ -6,9 +6,9 @@ class StrangeAdevertising:
         mails_sent = 5
         likes = 0
         for _ in range(n):
-            likes_this_days = mails_sent // 2
-            likes += likes_this_days
-            mails_sent = likes_this_days * 3
+            likes_current_day = mails_sent // 2
+            likes += likes_current_day
+            mails_sent = likes_current_day * 3
 
 
         return likes
