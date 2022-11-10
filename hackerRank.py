@@ -12,3 +12,12 @@ class StrangeAdevertising:
 
 
         return likes
+
+
+#https://www.hackerrank.com/challenges/save-the-prisoner/problem
+class SaveThePrisioner:
+    def saveThePrisoner(self, num_of_prisioners:int, num_of_sweets:int, chair_to_start_from:int) -> int:
+        total_positions_to_move = num_of_sweets + chair_to_start_from - 1
+        position_awful_sweet = total_positions_to_move % num_of_prisioners
+
+        return position_awful_sweet if position_awful_sweet != 0 else num_of_prisioners  

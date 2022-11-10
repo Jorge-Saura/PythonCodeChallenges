@@ -13,7 +13,10 @@ class TestBasics(unittest.TestCase):
             self.assertEqual(ad.viralAdvertising(5),24)
 
             
-
+        def test_save_the_prisioner(self):
+            sp = hackerRank.SaveThePrisioner()
+            self.assertEqual(sp.saveThePrisoner(5,2,1),2)
+            self.assertEqual(sp.saveThePrisoner(5,2,2),3)
 
 
 if __name__ == '__main__':
