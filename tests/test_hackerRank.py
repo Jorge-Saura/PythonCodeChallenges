@@ -24,7 +24,10 @@ class TestBasics(unittest.TestCase):
 
             self.assertEqual(car.circularArrayRotation([3,2,4],1,[0,2]),[4,2])
             
-
+        def test_permutation_equation(self):
+            pe = hackerRank.PermutationEquation()
+            self.assertEqual(pe.permutationEquation([2,3,1]),[2,3,1])
+            self.assertEqual(pe.permutationEquation([4,3,5,1,2]),[1,3,5,4,2])
 
 if __name__ == '__main__':
 
