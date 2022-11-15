@@ -21,3 +21,20 @@ class SaveThePrisioner:
         position_awful_sweet = total_positions_to_move % num_of_prisioners
 
         return position_awful_sweet if position_awful_sweet != 0 else num_of_prisioners  
+
+
+#https://www.hackerrank.com/challenges/circular-array-rotation/problem
+class CircularArrayRotation:
+    def circularArrayRotation(self, a:list, k:int, queries:list)->list:
+        length = len(a)
+        temp = [0] * length
+    
+        # for _ in range(k % length):
+        #     temp = [a[-1]]
+        #     temp.extend(a[:-1])
+        #     a = temp
+
+        for i, ele in enumerate(a):
+            temp[(i+k)%length]= ele
+
+        return [temp[i] for i in queries]
