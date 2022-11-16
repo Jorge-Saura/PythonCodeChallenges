@@ -29,6 +29,14 @@ class TestBasics(unittest.TestCase):
             self.assertEqual(pe.permutationEquation([2,3,1]),[2,3,1])
             self.assertEqual(pe.permutationEquation([4,3,5,1,2]),[1,3,5,4,2])
 
+
+        def test_jumping_on_the_clouds(self):
+            jc = hackerRank.JumpingOnTheClouds()
+            self.assertEqual(jc.jumpingOnClouds([0, 0, 1, 0, 0, 1, 1, 0],2),92)
+            self.assertEqual(jc.jumpingOnClouds([1, 1, 1, 0, 1, 1, 0, 0, 0, 0],3),80)
+            self.assertEqual(jc.jumpingOnClouds([1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1],19),97)
+
+
 if __name__ == '__main__':
 
     unittest.main()

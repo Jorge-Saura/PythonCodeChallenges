@@ -39,9 +39,22 @@ class PermutationEquation:
     def permutationEquation(self, p:list) -> list:
         temp = []
         for i in range(len(p)):
-
             index =  p.index(i+1)+1
             index_of_index = p.index(index)+1
             temp.append(index_of_index)
 
         return temp
+
+#https://www.hackerrank.com/challenges/jumping-on-the-clouds-revisited/problem
+class JumpingOnTheClouds:
+    def jumpingOnClouds(self, c:list, k:int) -> int:
+        n = len(c)
+        total_energy = 100
+        current_idx = k % n
+        total_energy = total_energy -1 - (2*c[current_idx])
+
+        while current_idx:
+            current_idx = (current_idx + k) % n
+            total_energy = total_energy -1 - (2*c[current_idx])
+
+        return total_energy
