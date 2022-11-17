@@ -47,6 +47,13 @@ class TestBasics(unittest.TestCase):
             self.assertEqual(ef.extraLongFactorials(25),15511210043330985984000000)
             self.assertEqual(ef.extraLongFactorials(45),119622220865480194561963161495657715064383733760000000000)
 
+        def test_append_and_delete(self):
+            ad = hackerRank.AppendAndDelete()
+            self.assertEqual(ad.appendAndDelete('hackerhappy','hackerrank',9),'Yes')
+            self.assertEqual(ad.appendAndDelete('aba','aba',7),'Yes')
+            self.assertEqual(ad.appendAndDelete('ashley','ash',2),'No')
+            self.assertEqual(ad.appendAndDelete('','',2),'Yes')
+            self.assertEqual(ad.appendAndDelete('y','yu',2),'No')
 
 
 if __name__ == '__main__':

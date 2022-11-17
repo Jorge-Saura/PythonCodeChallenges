@@ -62,11 +62,35 @@ class JumpingOnTheClouds:
 
 #https://www.hackerrank.com/challenges/find-digits/problem
 class FindDigits:
-    def findDigits(self, n):
+    def findDigits(self, n:int) -> int:
         return sum(1 if int(x) > 0 and n%int(x) == 0 else 0 for x in str(n))
 
 #https://www.hackerrank.com/challenges/extra-long-factorials/problem
 class ExtralongFactorials:
-    def extraLongFactorials(self, n):
+    def extraLongFactorials(self, n:int) -> int:
         if n == 1: return 1
         return n * self.extraLongFactorials(n-1)
+
+
+#https://www.hackerrank.com/challenges/append-and-delete/problem
+class AppendAndDelete:
+    def appendAndDelete(self, s, t, k):
+        coincident_chars = 0
+        for ele1, ele2 in zip(s,t):
+            if ele1 == ele2:
+                coincident_chars += 1
+            else:
+                break
+        
+        chars_to_delete = len(s)-coincident_chars
+        chars_to_append = len(t)-coincident_chars
+        
+        if (chars_to_delete + chars_to_append) == k:
+            return 'Yes'
+        elif len(s)==chars_to_delete and  chars_to_delete + chars_to_append < k:
+            return 'Yes'
+        elif len(s) > chars_to_delete and  chars_to_delete + chars_to_append < k and chars_to_append % 2 == 0:
+            return 'Yes'
+        else:
+            return 'No'
+
