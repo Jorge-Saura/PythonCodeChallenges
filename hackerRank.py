@@ -64,3 +64,9 @@ class JumpingOnTheClouds:
 class FindDigits:
     def findDigits(self, n):
         return sum(1 if int(x) > 0 and n%int(x) == 0 else 0 for x in str(n))
+
+#https://www.hackerrank.com/challenges/extra-long-factorials/problem
+class ExtralongFactorials:
+    def extraLongFactorials(self, n):
+        if n == 1: return 1
+        return n * self.extraLongFactorials(n-1)

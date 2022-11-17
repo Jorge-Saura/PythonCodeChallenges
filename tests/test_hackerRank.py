@@ -42,6 +42,12 @@ class TestBasics(unittest.TestCase):
             self.assertEqual(fd.findDigits(12),2)
             self.assertEqual(fd.findDigits(1012),3)
 
+        def test_extra_long_factorials(self):
+            ef = hackerRank.ExtralongFactorials()
+            self.assertEqual(ef.extraLongFactorials(25),15511210043330985984000000)
+            self.assertEqual(ef.extraLongFactorials(45),119622220865480194561963161495657715064383733760000000000)
+
+
 
 if __name__ == '__main__':
 
