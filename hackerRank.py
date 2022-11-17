@@ -58,3 +58,9 @@ class JumpingOnTheClouds:
             total_energy = total_energy -1 - (2*c[current_idx])
 
         return total_energy
+
+
+#https://www.hackerrank.com/challenges/find-digits/problem
+class FindDigits:
+    def findDigits(self, n):
+        return sum(1 if int(x) > 0 and n%int(x) == 0 else 0 for x in str(n))

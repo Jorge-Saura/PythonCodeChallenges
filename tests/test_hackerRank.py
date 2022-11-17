@@ -36,6 +36,12 @@ class TestBasics(unittest.TestCase):
             self.assertEqual(jc.jumpingOnClouds([1, 1, 1, 0, 1, 1, 0, 0, 0, 0],3),80)
             self.assertEqual(jc.jumpingOnClouds([1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1],19),97)
 
+        def test_finding_digits(self):
+            fd = hackerRank.FindDigits()
+            self.assertEqual(fd.findDigits(123),2)
+            self.assertEqual(fd.findDigits(12),2)
+            self.assertEqual(fd.findDigits(1012),3)
+
 
 if __name__ == '__main__':
 
