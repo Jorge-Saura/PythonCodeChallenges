@@ -94,3 +94,12 @@ class AppendAndDelete:
         else:
             return 'No'
 
+
+#https://www.hackerrank.com/challenges/sherlock-and-squares/problem
+class Squares:
+    def squares(self,start:int, end:int) -> int:
+        start_root = start**.5
+        start_root = int(start_root) if start_root.is_integer() else int(start_root) + 1
+        end_root = int(end**.5 )
+        return end_root-start_root+1
+

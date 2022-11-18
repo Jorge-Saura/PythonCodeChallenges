@@ -55,6 +55,12 @@ class TestBasics(unittest.TestCase):
             self.assertEqual(ad.appendAndDelete('','',2),'Yes')
             self.assertEqual(ad.appendAndDelete('y','yu',2),'No')
 
+        def test_squares(self):
+            sq = hackerRank.Squares()
+            self.assertEqual(sq.squares(3,9),2)
+            self.assertEqual(sq.squares(17,24),0)
+            self.assertEqual(sq.squares(24,49),3)
+
 
 if __name__ == '__main__':
 
