@@ -61,6 +61,17 @@ class TestBasics(unittest.TestCase):
             self.assertEqual(sq.squares(17,24),0)
             self.assertEqual(sq.squares(24,49),3)
 
+        def test_magic_square(self):
+            ms = hackerRank.MagicSquare()
+            self.assertEqual(len(ms.all_ms), 8)
+            s = [[5, 3, 4], [1, 5, 8], [6, 4, 2]]
+            self.assertEqual(ms.formingMagicSquare(s), 7)
+            s = [[4, 9, 2], [3, 5, 7], [8, 1, 5]]
+            self.assertEqual(ms.formingMagicSquare(s), 1)
+            s = [[4, 8, 2], [4, 5, 7], [6, 1, 6]]
+            self.assertEqual(ms.formingMagicSquare(s), 4)            
+
+
 
 if __name__ == '__main__':
 

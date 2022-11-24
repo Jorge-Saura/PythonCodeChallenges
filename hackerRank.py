@@ -103,3 +103,45 @@ class Squares:
         end_root = int(end**.5 )
         return end_root-start_root+1
 
+
+#https://www.hackerrank.com/challenges/magic-square-forming/problem
+
+class MagicSquare:
+    ms_h = [[8, 3, 4], [1, 5, 9], [6, 7, 2]]
+    ms_v = [[4, 9, 2], [3, 5, 7], [8, 1, 6]]
+
+    all_ms = None
+
+
+
+    def __init__(self):
+        self.all_ms = list()
+
+        self._add_ms(self.ms_h)
+        self._add_ms(self.ms_v)
+
+
+    def _add_ms(self, ms:list):
+        self.all_ms.append(ms)
+        self.all_ms.append([ms[2], ms[1], ms[0]])
+        new_ms = []
+        for row in ms:
+            new_ms.append([row[2],row[1],row[0]])
+        
+        self.all_ms.append(new_ms)
+        self.all_ms.append([new_ms[2], new_ms[1], new_ms[0]])
+
+
+
+    def formingMagicSquare(self, s: list) -> int:
+        min_cost = 1000
+        for square in self.all_ms:
+            current_cost = 0
+            for row1, row2 in zip(square,s):
+                row_cost = sum([abs(a-b) for a,b in zip(row1,row2)])
+                current_cost += row_cost
+            
+            min_cost = current_cost if current_cost < min_cost else min_cost
+
+
+        return min_cost
