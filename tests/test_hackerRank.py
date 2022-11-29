@@ -71,7 +71,20 @@ class TestBasics(unittest.TestCase):
             s = [[4, 8, 2], [4, 5, 7], [6, 1, 6]]
             self.assertEqual(ms.formingMagicSquare(s), 4)            
 
+        def test_picking_numbers(self):
+            pn = hackerRank.PickingNumbers()
+            self.assertEqual(pn.pickingNumbers([1,1,2,2,4,4,5,5,5]), 5)
+            self.assertEqual(pn.pickingNumbers([4,6,5,3,3,1]), 3)
+            self.assertEqual(pn.pickingNumbers([1,2,2,3,1,2]), 5)
+            a = [4, 97, 5, 97, 97, 4, 97, 4, 97, 97, 97, 97, 4, 4, 5, 5, 97, 5, 97, 99, 4, 97, 5, 97, 97, 97, 5, 5, 97, 4, 5, 97, 97, 5, 97, 4, 97, 5, 4, 4, 97, 5, 5, 5, 4, 97, 97, 4, 97, 5, 4, 4, 97, 97, 97, 5, 5, 97, 4, 97, 97, 5, 4, 97, 97, 4, 97, 97, 97, 5, 4, 4, 97, 4, 4, 97, 5, 97, 97, 97, 97, 4, 97, 5, 97, 5, 4, 97, 4, 5, 97, 97, 5, 97, 5, 97, 5, 97, 97, 97]
+            self.assertEqual(pn.pickingNumbers(a), 50)
+            a= [66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66, 66]
+            self.assertEqual(pn.pickingNumbers(a), 100)
 
+        def test_climbing_leaderboard(self):
+            cl = hackerRank.ClimbingLeaderboard()
+            self.assertEqual(cl.climbingLeaderboard([100, 100, 50, 40, 40, 20, 10],[5, 25, 50, 120]),[6,4,2,1])
+            self.assertEqual(cl.climbingLeaderboard([100, 90, 90, 80, 75, 60],[50, 65, 77, 90, 102]),[6,5,4,2,1])
 
 if __name__ == '__main__':
 

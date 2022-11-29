@@ -112,14 +112,10 @@ class MagicSquare:
 
     all_ms = None
 
-
-
     def __init__(self):
         self.all_ms = list()
-
         self._add_ms(self.ms_h)
         self._add_ms(self.ms_v)
-
 
     def _add_ms(self, ms:list):
         self.all_ms.append(ms)
@@ -131,8 +127,6 @@ class MagicSquare:
         self.all_ms.append(new_ms)
         self.all_ms.append([new_ms[2], new_ms[1], new_ms[0]])
 
-
-
     def formingMagicSquare(self, s: list) -> int:
         min_cost = 1000
         for square in self.all_ms:
@@ -142,6 +136,64 @@ class MagicSquare:
                 current_cost += row_cost
             
             min_cost = current_cost if current_cost < min_cost else min_cost
-
-
         return min_cost
+
+
+#https://www.hackerrank.com/challenges/picking-numbers/problem
+class PickingNumbers:
+
+    def pickingNumbers(self, a:list) -> int:
+        a.sort()
+        last_digit = 0
+        last_digit_count = 0
+
+        count_of_digits = 0
+        while a:
+
+            current_digit = a.pop(0)
+            current_digit_count = 1
+            while a and a[0] == current_digit:
+                a.pop(0)
+                current_digit_count += 1
+                
+            if current_digit - last_digit == 1:
+                count_of_digits = last_digit_count + current_digit_count if last_digit_count + current_digit_count > count_of_digits else count_of_digits
+
+            if current_digit - last_digit >= 1:
+                last_digit = current_digit
+                last_digit_count = current_digit_count
+                count_of_digits = current_digit_count if current_digit_count > count_of_digits else count_of_digits
+                
+
+        return count_of_digits
+
+
+#https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem
+class ClimbingLeaderboard:
+
+    def climbingLeaderboard(self, ranked:list, player:list) -> list:
+        player_scores = len(player)
+        ranked_scores = len(ranked)
+        player_rankings = [0]*player_scores
+        ranked_pointer = 0
+        ranked_position = 1
+
+        i = player_scores - 1 
+
+        while i>=0:
+            current = player[i]
+
+            if ranked_pointer >= ranked_scores or current >= ranked[ranked_pointer]:
+                player_rankings[i] = ranked_position
+                
+            elif ranked_pointer < ranked_scores:
+                #move pointer until next position
+                current_ranked = ranked[ranked_pointer]
+                while ranked_pointer<ranked_scores and current_ranked == ranked[ranked_pointer]:
+                    ranked_pointer += 1
+                ranked_position += 1
+                i = i + 1 
+            i -= 1
+        return player_rankings
+
+            
