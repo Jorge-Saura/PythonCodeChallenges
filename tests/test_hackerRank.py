@@ -86,6 +86,13 @@ class TestBasics(unittest.TestCase):
             self.assertEqual(cl.climbingLeaderboard([100, 100, 50, 40, 40, 20, 10],[5, 25, 50, 120]),[6,4,2,1])
             self.assertEqual(cl.climbingLeaderboard([100, 90, 90, 80, 75, 60],[50, 65, 77, 90, 102]),[6,5,4,2,1])
 
+        def test_designer_PDFViewer(self):
+            dp = hackerRank.DesignerPDFViewer()
+            h = [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+            self.assertEqual(dp.designerPdfViewer(h,'abc'), 9)
+            h = [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7]
+            self.assertEqual(dp.designerPdfViewer(h,'zaba'), 28)
+
 if __name__ == '__main__':
 
     unittest.main()

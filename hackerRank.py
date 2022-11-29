@@ -196,4 +196,12 @@ class ClimbingLeaderboard:
             i -= 1
         return player_rankings
 
-            
+#https://www.hackerrank.com/challenges/designer-pdf-viewer/problem
+class DesignerPDFViewer:
+    def designerPdfViewer(self, h:list, word:str) -> int:
+        #a is 97 in ascii
+        numbers = [h[ord(letter)-97] for letter in word]
+
+
+
+        return max(numbers)* len(word.strip())
