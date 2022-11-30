@@ -93,6 +93,24 @@ class TestBasics(unittest.TestCase):
             h = [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7]
             self.assertEqual(dp.designerPdfViewer(h,'zaba'), 28)
 
+        def test_utopian_tree(self):
+            ut = hackerRank.UtopianTree()
+            self.assertEqual(ut.utopianTree(0),1)
+            self.assertEqual(ut.utopianTree(1),2)
+            self.assertEqual(ut.utopianTree(4),7)
+
+
+        def test_library_fine(self):
+            lf = hackerRank.LibraryFine()
+            self.assertEqual(lf.libraryFine(14,7,2018,5,7,2018),135)
+            self.assertEqual(lf.libraryFine(9,6,2015,6,6,2015),45)
+            self.assertEqual(lf.libraryFine(9,6,2015,6,6,2014),10000)
+            self.assertEqual(lf.libraryFine(9,8,2015,6,6,2015),1000)
+            self.assertEqual(lf.libraryFine(9,5,2015,6,6,2015),0)
+            self.assertEqual(lf.libraryFine(9,5,2015,9,5,2015),0)
+            self.assertEqual(lf.libraryFine(2,7,2014,1,1,2015),0)
+
+
 if __name__ == '__main__':
 
     unittest.main()

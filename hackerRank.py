@@ -201,7 +201,26 @@ class DesignerPDFViewer:
     def designerPdfViewer(self, h:list, word:str) -> int:
         #a is 97 in ascii
         numbers = [h[ord(letter)-97] for letter in word]
-
-
-
         return max(numbers)* len(word.strip())
+
+
+#https://www.hackerrank.com/challenges/utopian-tree/problem
+class UtopianTree:
+    def utopianTree(self, n: int) -> int:
+        init_height = 1
+        for i in range(n):
+            init_height = init_height + 1 if i% 2 == 1 else init_height*2
+
+        return init_height
+
+#https://www.hackerrank.com/challenges/library-fine/problem
+class LibraryFine:
+    def libraryFine(self, d1:int, m1:int, y1:int, d2:int, m2:int, y2:int) -> int:
+        if y1>y2:
+            return 10000
+        elif m1>m2 and y1 == y2:
+            return (m1-m2)*500
+        elif d1>d2 and m1==m2 and y1==y2:
+            return (d1-d2)*15
+        else:
+            return 0
