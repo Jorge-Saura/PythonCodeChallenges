@@ -110,6 +110,12 @@ class TestBasics(unittest.TestCase):
             self.assertEqual(lf.libraryFine(9,5,2015,9,5,2015),0)
             self.assertEqual(lf.libraryFine(2,7,2014,1,1,2015),0)
 
+        def test_cut_the_sticks(self):
+            cs = hackerRank.CutTheSticks()
+            self.assertEqual(cs.cutTheSticks([1]),[1])
+            self.assertEqual(cs.cutTheSticks([1,2,3]),[3,2,1]) 
+            self.assertEqual(cs.cutTheSticks([5, 4, 4, 2, 2, 8]),[6, 4, 2, 1])   
+            self.assertEqual(cs.cutTheSticks([1, 2, 3, 4, 3, 3, 2, 1]),[8, 6, 4, 1])
 
 if __name__ == '__main__':
 

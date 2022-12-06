@@ -224,3 +224,17 @@ class LibraryFine:
             return (d1-d2)*15
         else:
             return 0
+
+#https://www.hackerrank.com/challenges/cut-the-sticks/problem
+
+class CutTheSticks:
+    def cutTheSticks(self, arr:list[int]) -> list[int]:
+        #get shortest
+        result = list()  
+        while arr:
+            result.append(len(arr))
+            shortest = min(arr)
+            arr = [x-shortest for x in arr if x-shortest > 0]
+
+        return result
+        
