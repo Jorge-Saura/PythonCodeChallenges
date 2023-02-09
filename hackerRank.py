@@ -238,3 +238,57 @@ class CutTheSticks:
 
         return result
         
+
+#https://www.hackerrank.com/challenges/non-divisible-subset/problem
+
+class NonDivisibleSubset:
+
+    def _get_all_possible_subsets(self, k:int, s:list[int]) -> dict:
+        result = []
+        for idx, current in enumerate(s):
+            l = [current]
+            for ele in s[idx+1:]:
+                
+                if (current + ele) % k:
+                    l.append(ele)
+            if l:
+                result.append(l)
+
+        return result
+
+    def get_max_subset(self, subset:list, k:int) -> int:
+        max_subset = 0
+        if len(subset)==1:
+            return 1
+        else:
+            return 1 + self.get_subset(k, subset[1:])
+
+    def get_subset(self, k:int, s:list[int]) -> int:
+        possible_subsets = self._get_all_possible_subsets(k,s)
+
+        max_subset = 0
+        for subset in possible_subsets:
+            current_max = self.get_max_subset(subset, k)
+            max_subset = max(max_subset, current_max)
+
+        return max_subset
+
+    def get_subset2(self, k:int, s:list[int]) -> int:
+        l = []
+        for idx, ele in s:
+            l.append(ele)
+            
+
+        return 1
+
+
+# https://www.hackerrank.com/challenges/apple-and-orange/problem?isFullScreen=true
+
+class FruitCounter:
+
+    def  countApplesAndOranges(self, s:int, t:int, a:int, b:int, apples:int, oranges:int) -> int:
+
+        total_apples = sum(1 if s <= apple + a <= t else 0 for apple in apples)
+        total_oranges = sum(1 if s <= orange + b <= t else 0 for orange in oranges)
+
+        return [total_apples,total_oranges]

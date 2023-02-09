@@ -117,6 +117,20 @@ class TestBasics(unittest.TestCase):
             self.assertEqual(cs.cutTheSticks([5, 4, 4, 2, 2, 8]),[6, 4, 2, 1])   
             self.assertEqual(cs.cutTheSticks([1, 2, 3, 4, 3, 3, 2, 1]),[8, 6, 4, 1])
 
+        def test_non_divisible_subset(self):
+            nds = hackerRank.NonDivisibleSubset()
+
+            self.assertEqual(nds._get_all_possible_subsets(3,[5,3,7]),[[5,3],[3,7],[7]])
+
+            self.assertEqual(nds._get_all_possible_subsets(3,[1, 7, 2, 4]),[[1,7,4],[7,4],[2],[4]])
+
+            self.assertEqual(nds.get_subset(3,[1, 7, 2, 4]),3)
+
+        def test_fruit_counter(self):
+            fc = hackerRank.FruitCounter()
+            self.assertEqual(fc.countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6]),[1,1])
+
+
 if __name__ == '__main__':
 
     unittest.main()
